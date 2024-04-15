@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: CeraPro;
+  src:
+    url('CeraPro-Medium.woff2') format('woff2'),
+    url('CeraPro-Medium.woff') format('woff');
+}
+.banner {
+  background-image: url('/resources/images/legoland_banner.jpg');
+  background-size: cover;
+}
+
+/* custom style for attracties to get them nice lined up using display grid */
+.attracties {
+  .attractie:nth-child(even) {
+    display: grid !important;
+    grid-template-areas:
+      'a a'
+      'b b';
+    .left {
+      grid-area: a;
+    }
+    .right {
+      grid-area: b;
+      display: grid !important;
+      grid-template-areas: 'a b';
+      img {
+        grid-area: a;
+      }
+      p {
+        grid-area: b;
+      }
+    }
+  }
+
+  .attractie:nth-child(odd) {
+    display: grid !important;
+    grid-template-areas:
+      'a a'
+      'b b';
+    .left {
+      grid-area: a;
+    }
+    .right {
+      grid-area: b;
+      display: grid !important;
+      grid-template-areas: 'b a';
+      img {
+        grid-area: a;
+      }
+      p {
+        grid-area: b;
+      }
+    }
+  }
+}
+th,
+tr,
+td {
+  border: 1px solid #000;
+}
+th,
+td {
+  padding: 0.75rem;
+}
