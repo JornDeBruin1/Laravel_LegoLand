@@ -11,6 +11,11 @@
         <p class="text-white text-lg m-2">{!! \Session::get('bericht') !!}</p>
     </div>
     @endif
+    @if(\Session::has('error'))
+        <div class="bg-red-600 rounded w-1/2 m-auto text-center border-black border"> 
+            <p class="text-white text-lg m-2">{!! \Session::get('error') !!}</p>
+        </div>
+    @endif
         <form method="POST" action="/bestellingen/save">
             @csrf
             <div class="flex pt-1">
@@ -36,7 +41,10 @@
                             </div>
                         </div>
                     </div>
-                @endforeach
+                  
+                    
+                @endforeach 
+               
             </div>
             <div class="mt-4 lg:ml-[40%]">
                 <label>Achternaam</label>

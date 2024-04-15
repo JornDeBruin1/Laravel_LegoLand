@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Bestellingen;
 use App\Models\BestellingRegel;
 use App\Models\Tickets;
+use Exception;
 use Illuminate\Http\Request;
 
 class BestellingenController extends Controller
@@ -33,6 +34,7 @@ class BestellingenController extends Controller
      */
     public function store(Request $request)
     {
+        try{
         $bestelling = new Bestellingen();
         // gegevens uit form
         $bestelling->achternaam = $request->input('achternaam');
@@ -42,6 +44,7 @@ class BestellingenController extends Controller
         $bestelling->save();
         return redirect()->route('bestellingen')->with('bericht', 'Bedankt voor uw Aankoop.');
 
+        
 
         //todo loop door tickets
         foreach ($request->input('tickets') as $ticketID => $aantal) {
@@ -51,6 +54,10 @@ class BestellingenController extends Controller
             $bestelling_regel->aantal = $aantal;
             $bestelling_regel->save();
         }
+    }
+        catch(Exception $e){
+            return redirect()->route('bestellingen')->with('error', 'Vul alle velden in.');
+        }        
     }
 
     /**
