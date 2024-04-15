@@ -13,6 +13,11 @@
         
         </div>
     @endif
+    @if(\Session::has('error'))
+        <div class="bg-red-600 rounded w-1/2 m-auto text-center border-black border"> 
+            <p class="text-white text-lg m-2">{!! \Session::get('error') !!}</p>
+        </div>
+    @endif
     <form method="POST" action="/contact/save">
         @csrf
         <div class="flex pt-1 ">
