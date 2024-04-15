@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use Exception;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -28,13 +29,19 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        $contact = new Contact();
-        $contact->name = $request->input('naam');
-        $contact->email = $request->input('email');
-        $contact->subject = $request->input('onderwerp');
-        $contact->message = $request->input('bericht');
-        $contact->save();
-        return redirect()->route('contact')->with('bericht', 'Bedankt voor uw bericht, we nemen zo snel mogelijk contact met u op.');
+        try{
+            $contact = new Contact();
+            $contact->name = $request->input('naam');
+            $contact->email = $request->input('email');
+            $contact->subject = $request->input('onderwerp');
+            $contact->message = $request->input('bericht');
+            $contact->save();
+            return redirect()->route('contact')->with('bericht', 'Bedankt voor uw bericht, we nemen zo snel mogelijk contact met u op.');  
+        }
+        catch(Exception $e){
+            return redirect()->route('contact')->with('error', 'Vul alle velden in.');
+        }
+       
     }
 
     /**
