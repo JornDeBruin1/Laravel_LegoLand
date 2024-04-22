@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    <h1>Login</h1>
+<h1 class="text-center text-2xl font-bold py-6">Login</h1>
     @if ($errors->any())
         <div class="bg-red-600 rounded w-1/2 m-auto text-center border-black border">
             <ul>
@@ -13,8 +13,6 @@
     @endif
     <form method="POST" action="{{ route('login') }}">
         @csrf
-
-
         <div class="flex pt-1 ">
             <div class=" flex flex-col mb-6 border w-full items-center">
                 <div class="w-2/3 lg:w-1/5 mt-6">
@@ -34,7 +32,7 @@
                     </div>
                 </div>               
                 <button class="mt-7 mb-8 bg-transparent hover:bg-customDarkBlue text-blue-700 font-semibold hover:text-white py-2 px-4 border border-customDarkBlue hover:border-transparent rounded">
-                    Log in
+                    Login
                 </button>             
             </div>
         </div>
