@@ -5,6 +5,7 @@ use App\Http\Controllers\AttractiesController;
 use App\Http\Controllers\OpeningstijdenController;
 use App\Http\Controllers\BestellingenController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\AccomodatiesController;
 use App\Http\Controllers\AuthController;
 
 /*
@@ -27,6 +28,7 @@ Route::get('/bestellingen', [\App\Http\Controllers\BestellingenController::class
 Route::post('/bestellingen/save', [\App\Http\Controllers\BestellingenController::class, 'store'])->name('bestellingen.store');
 Route::get('/contact', [\App\Http\Controllers\ContactController::class, 'index'])->name('contact'); 
 Route::post('/contact/save', [\App\Http\Controllers\ContactController::class, 'store'])->name('contact.store');
+Route::get('/accomodaties', [\App\Http\Controllers\AccomodatiesController::class, 'index'])->name('accomodaties');
 
 // Auth middleware
 Route::middleware('auth')->group(function () {
