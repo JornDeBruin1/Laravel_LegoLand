@@ -24,7 +24,7 @@
                <div>
                    <a href="/"><img class="w-1/3" src="{{ Vite::asset('resources/images/LEGOLAND_PARKS_LOGO.svg') }}" alt="LegoLand logo"></a>
                </div>
-               <div class="customLg:hidden">
+               <div class="xl:hidden">
                    <button class="navbar-burger flex items-center text-black p-3">
                        <svg class="block h-6 w-6  fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                            <title>Menu</title>
@@ -47,6 +47,9 @@
                    </li>
                    <li>
                         <a href="/contact"><li>Contact</li></a>
+                    </li>
+                   <li>
+                        <a href="/accomdatie"><li>Accomdatie</li></a>
                     </li>
                     <li>
                         <a href="/logout">Logout</a>
@@ -84,6 +87,8 @@
                             <li class="mb-1">
                             </li><a class="block p-4 text-sm font-semibold text-black hover:bg-blue-50 hover:text-customYellow rounded" href="/contact">Contact</a>                        </ul>
                             <li class="mb-1">
+                            </li><a class="block p-4 text-sm font-semibold text-black hover:bg-blue-50 hover:text-customYellow rounded" href="/accomdatie">Accomdatie</a>                        </ul>
+                            <li class="mb-1">
                             </li><a class="block p-4 text-sm font-semibold text-black hover:bg-blue-50 hover:text-customYellow rounded" href="/logout">Logout</a>                        </ul>
                     </div>
                 </nav>
@@ -103,7 +108,7 @@
                         </svg>
                     </button>
                 </div>
-                <ul class="hidden absolute top-1/2 customLg:left-[35%] xl:left-[40%]  customLg:mx-auto customLg:flex customLg:items-center customLg:w-auto customLg:space-x-6">
+                <ul class="hidden absolute top-1/2 customLg:left-[23%] xl:left-[26%]  customLg:mx-auto customLg:flex customLg:items-center customLg:w-auto customLg:space-x-6">
                     <li class="text-gray-300">
                         <a href="/"><li>Home</li></a>
                     </li>
@@ -117,6 +122,7 @@
                         <a href="/bestellingen"><li>Prijzen</li></a>
                     </li>
                     <li><a href="/contact"><li>Contact</li></a></li>
+                    <li><a href="/accomodaties"><li>Accomodatie</li></a></li>
                     <li><a href="/login">Login</a></li>
                     <li><a href="/register">Register</a></li>
                 </ul>
@@ -172,6 +178,7 @@
                         <a href="/openingstijden"><li>Openingstijden</li></a>
                         <a href="/bestellingen"><li>Prijzen</li></a>
                         <a href="/contact"><li>Contact</li></a>
+                        <a href="/accomodaties"><li>Accomodatie</li></a>
                     </ul>
                 </div>
             </div>
@@ -187,6 +194,7 @@
                         <a href="/openingstijden"><li>Openingstijden</li></a>
                         <a href="/bestellingen"><li>Prijzen</li></a>
                         <a href="/contact"><li>Contact</li></a>
+                        <a href="/accomodaties"><li>accomodaties</li></a>
                     </ul>
                 </div>
             </div>
