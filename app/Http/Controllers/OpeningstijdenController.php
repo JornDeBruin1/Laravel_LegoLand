@@ -12,7 +12,8 @@ class OpeningstijdenController extends Controller
      */
     public function index()
     {
-        return view('openingstijden');
+        $openingstijden = Openingstijden::all();
+        return view('openingstijden', ['openingstijden' => $openingstijden]);
     }
 
     /**
