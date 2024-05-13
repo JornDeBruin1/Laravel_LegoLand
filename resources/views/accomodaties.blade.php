@@ -12,7 +12,7 @@
                             <p class="text-sm">Aantal badkamers: {{ $accomodatie->aantal_badkamers }}</p>
                             <p class="text-sm">Aantal Slaapkamers: {{ $accomodatie->aantal_slaapkamers }}</p>
                             <p class="text-sm">€{{ $accomodatie->prijs }} per nacht</p>
-                            {{-- <a href="{{ route('accomodatie.show', $accomodatie->id) }}" class="bg-blue-500 text-white px-4 py-2 rounded-lg mt-4 block text-center">Bekijk</a> --}}
+                            <a href="{{ route('accomodatie.bestel', $accomodatie->id) }}" class="bg-blue-500 text-white px-4 py-2 rounded-lg mt-4 block text-center">Bekijk</a>
                         </div>
                     </div>
                 </div>

@@ -29,6 +29,7 @@ Route::post('/bestellingen/save', [\App\Http\Controllers\BestellingenController:
 Route::get('/contact', [\App\Http\Controllers\ContactController::class, 'index'])->name('contact'); 
 Route::post('/contact/save', [\App\Http\Controllers\ContactController::class, 'store'])->name('contact.store');
 Route::get('/accomodaties', [\App\Http\Controllers\AccomodatiesController::class, 'index'])->name('accomodaties');
+Route::get('/accomodaties/bestel', [\App\Http\Controllers\AccomodatieBestelController::class, 'index'])->name('accomodatie.bestel');
 
 // Auth middleware
 Route::middleware('auth')->group(function () {
