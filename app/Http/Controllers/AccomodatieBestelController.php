@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\AccomodatieBestel;
+use App\Models\Accomodaties;
+use Exception;
 use Illuminate\Http\Request;
 
 class AccomodatieBestelController extends Controller
@@ -12,54 +14,63 @@ class AccomodatieBestelController extends Controller
      */
     public function index()
     {
-        return view('accomodatiesBestel');
-    }
+        $accomodatie = Accomodaties::all();
+        return view('accomodatiesBestel', [
+            'accomodaties' => $accomodatie
+        ]);
+        
+        
+    
+}
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
+/**
+* Show the form for creating a new resource.
+*/
+public function create()
+{
+//
+}
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+/**
+* Store a newly created resource in storage.
+*/
+public function store(Request $request)
+{
+    
+}
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(AccomodatieBestel $accomodatieBestel)
-    {
-        //
-    }
+/**
+* Display the specified resource.
+*/
+public function show(Accomodaties $accomodatie)
+{
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(AccomodatieBestel $accomodatieBestel)
-    {
-        //
-    }
+    return view('accomodatiesBestel', [
+        'accomodatie' => $accomodatie
+    ]);
+}
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, AccomodatieBestel $accomodatieBestel)
-    {
-        //
-    }
+/**
+* Show the form for editing the specified resource.
+*/
+public function edit(AccomodatieBestel $accomodatieBestel)
+{
+//
+}
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(AccomodatieBestel $accomodatieBestel)
-    {
-        //
-    }
+/**
+* Update the specified resource in storage.
+*/
+public function update(Request $request, AccomodatieBestel $accomodatieBestel)
+{
+//
+}
+
+/**
+* Remove the specified resource from storage.
+*/
+public function destroy(AccomodatieBestel $accomodatieBestel)
+{
+//
+}
 }
