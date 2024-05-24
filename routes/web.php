@@ -23,6 +23,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/attracties', [\App\Http\Controllers\AttractiesController::class, 'index'])->name('attracties');
+Route::get('/attracties/{attractie}', [\App\Http\Controllers\AttractiesController::class, 'show'])->name('attracties.detail');
 Route::get('/openingstijden', [\App\Http\Controllers\OpeningstijdenController::class, 'index'])->name('openingstijden');
 Route::get('/bestellingen', [\App\Http\Controllers\BestellingenController::class, 'index'])->name('bestellingen');
 Route::post('/bestellingen/save', [\App\Http\Controllers\BestellingenController::class, 'store'])->name('bestellingen.store');
