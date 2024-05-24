@@ -35,9 +35,11 @@ class AttractiesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Attracties $attracties)
+    public function show(Attracties $attractie)
     {
-        //
+        return view('attractiesDetail', [
+            'attractie' => $attractie
+        ]);
     }
 
     /**
