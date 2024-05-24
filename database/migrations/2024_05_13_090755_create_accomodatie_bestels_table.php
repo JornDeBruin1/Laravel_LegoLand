@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('accomodatie_bestels', function (Blueprint $table) {
             $table->id();
+            
             $table->timestamps();
         });
     }

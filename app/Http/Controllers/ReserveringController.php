@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Accomodaties;
 use App\Models\Reservering;
+use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
 
@@ -31,6 +32,27 @@ class ReserveringController extends Controller
     public function store(Request $request)
     {
         try{
+            $allReservations = Reservering::all();
+            $reservationCheck = false;
+            foreach($allReservations as $reservation){
+                $startDate = Carbon::createFromFormat('Y-m-d', $reservation->aankomst_datum);
+                $endDate = Carbon::createFromFormat('Y-m-d', $reservation->vertrek_datum);
+                $checkStartDate = Carbon::createFromFormat('Y-m-d', $request->input('aankomst'));
+                $checkEndDate = Carbon::createFromFormat('Y-m-d',$request->input('vertrek'));
+                if($checkStartDate->between($startDate, $endDate) == true){
+                    $reservationCheck = true;
+                }
+                if($checkEndDate->between($startDate, $endDate) == true){
+                    $reservationCheck = true;
+                }
+            }
+            
+            // dd($reservationCheck);
+            if($reservationCheck == true){
+                return redirect()->route('accomodaties')->with('error', 'Deze datum is al bezet, kies een andere datum.');
+            }
+            
+            
             $reservering = new Reservering();
             $reservering->accomodatie_id =  $request->input('accomodatie');
             $reservering->aantal_personen = $request->input('personen');

@@ -14,4 +14,5 @@ class Reservering extends Model
     {
         return $this->hasMany(Accomodaties::class);
     }
+    
 }
