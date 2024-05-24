@@ -12,41 +12,13 @@
                 <th>Openingstijd</th>
                 <th>Sluitingstijd</th>
             </tr>
+            @foreach ($openingstijden as $openingstijd)
           <tr>
-                <td>Maandag</td>
-                <td>09:00</td>
-                <td>17:00</td>
+                <td>{{ $openingstijd->dag }}</td>
+                <td>{{ $openingstijd->opening }}</td>
+                <td>{{ $openingstijd->sluiting }}</td>
           </tr>
-          <tr>
-                <td>Dinsdag</td>
-                <td>09:00</td>
-                <td>17:00</td>
-          </tr>
-          <tr>
-                <td>Woensdag</td>
-                <td>09:00</td>
-                <td>17:00</td>
-          </tr>
-          <tr>
-                <td>Donderdag</td>
-                <td>09:00</td>
-                <td>17:00</td>
-          </tr>
-          <tr>
-                <td>Vrijdag</td>
-                <td>09:00</td>
-                <td>22:00</td>
-          </tr>
-          <tr>
-                <td>Zaterdag</td>
-                <td>09:00</td>
-                <td>22:00</td>
-          </tr>
-          <tr>
-                <td>Zondag</td>
-                <td>09:00</td>
-                <td>20:00</td>
-          </tr>
+          @endforeach
         </table>
     </div>
 </div>
