@@ -32,6 +32,9 @@ Route::post('/contact/save', [\App\Http\Controllers\ContactController::class, 's
 Route::get('/accomodaties', [\App\Http\Controllers\AccomodatiesController::class, 'index'])->name('accomodaties');
 Route::get('/accomodaties/{accomodatie}', [\App\Http\Controllers\AccomodatieBestelController::class, 'show'])->name('accomodatie.bestel');
 Route::post('/accomodaties/save', [\App\Http\Controllers\ReserveringController::class, 'store'])->name('reservering.store');
+Route::get('/accomodatieAdmin',[\App\Http\Controllers\AccomodatieAdminController::class, 'index'])->name('accomodatieAdmin');
+Route::post('/accomodatiesAdmin/save',[\App\Http\Controllers\AccomodatieAdminController::class,'store'])->name('accomodatieAdmin.store');
+
 
 // Auth middleware
 Route::middleware('auth')->group(function () {
