@@ -2,18 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Openingstijden;
+use App\Models\Attracties;
 use Illuminate\Http\Request;
 
-class OpeningstijdenController extends Controller
+class AttractiesAdminController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $openingstijden = Openingstijden::all();
-        return view('openingstijden', ['openingstijden' => $openingstijden]);
+        return view('attractiesAdmin');
     }
 
     /**
@@ -35,17 +34,17 @@ class OpeningstijdenController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Openingstijden $openingstijd)
+    public function show(Attracties $attractie)
     {
-        return view('openingstijdenAdmin', [
-            'openingstijd' => $openingstijd
+        return view('attractiesAdmin', [
+            'attractie' => $attractie
         ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Openingstijden $openingstijden)
+    public function edit(Attracties $attracties)
     {
         //
     }
@@ -53,7 +52,7 @@ class OpeningstijdenController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Openingstijden $openingstijden)
+    public function update(Request $request, Attracties $attracties)
     {
         //
     }
@@ -61,7 +60,7 @@ class OpeningstijdenController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Openingstijden $openingstijden)
+    public function destroy(Attracties $attracties)
     {
         //
     }

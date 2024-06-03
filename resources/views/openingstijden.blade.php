@@ -11,15 +11,24 @@
                 <th>Dag</th>
                 <th>Openingstijd</th>
                 <th>Sluitingstijd</th>
+                @auth
+                <th>Admin</th>
+                @endauth
             </tr>
             @foreach ($openingstijden as $openingstijd)
           <tr>
-                <td>{{ $openingstijd->dag }}</td>
+                <td>{{ $openingstijd->dag }} </td>
                 <td>{{ $openingstijd->opening }}</td>
                 <td>{{ $openingstijd->sluiting }}</td>
+                @auth
+                <td>
+                    <a href="/openingstijden/{{$openingstijd->id}}" class="bg-green-500 text-white px-4 py-2 rounded-lg mt-4 block text-center">Bijwerken</a>
+                </td>
+                @endauth
           </tr>
           @endforeach
         </table>
+        
     </div>
 </div>
 

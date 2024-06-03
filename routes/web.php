@@ -23,8 +23,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/attracties', [\App\Http\Controllers\AttractiesController::class, 'index'])->name('attracties');
+Route::get('/attractiesAdmin', [\App\Http\Controllers\AttractiesAdminController::class, 'index'])->name('attracties.admin');
 Route::get('/attracties/{attractie}', [\App\Http\Controllers\AttractiesController::class, 'show'])->name('attracties.detail');
 Route::get('/openingstijden', [\App\Http\Controllers\OpeningstijdenController::class, 'index'])->name('openingstijden');
+Route::get('/openingstijden/{openingstijd}', [\App\Http\Controllers\OpeningstijdenController::class, 'show'])->name('openingstijden.admin');
 Route::get('/bestellingen', [\App\Http\Controllers\BestellingenController::class, 'index'])->name('bestellingen');
 Route::post('/bestellingen/save', [\App\Http\Controllers\BestellingenController::class, 'store'])->name('bestellingen.store');
 Route::get('/contact', [\App\Http\Controllers\ContactController::class, 'index'])->name('contact'); 
