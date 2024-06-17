@@ -124,7 +124,7 @@
                     <li><a href="/contact"><li>Contact</li></a></li>
                     <li><a href="/accomodaties"><li>Accomodatie</li></a></li>
                     <li><a href="/login">Login</a></li>
-                     <!-- <li><a href="/register">Register</a></li> -->
+                    {{-- <li><a href="/register">Register</a></li> --}}
                 </ul>
              </nav> 
             <div class="navbar-menu relative z-50 hidden">
@@ -158,7 +158,7 @@
                             <li class="mb-1">
                             </li><a class="block p-4 text-sm font-semibold text-black hover:bg-blue-50 hover:text-customYellow rounded" href="/login">Login</a>
                             <li class="mb-1">
-                            <!-- </li><a class="block p-4 text-sm font-semibold text-black hover:bg-blue-50 hover:text-customYellow rounded" href="/register">Register</a> -->
+                            {{-- </li><a class="block p-4 text-sm font-semibold text-black hover:bg-blue-50 hover:text-customYellow rounded" href="/register">Register</a> --}}
                         </ul>
                     </div>
                 </nav>
