@@ -4,9 +4,16 @@
 @extends(" layout")
 @section('content')
 <div class="w-full">
+    @auth
+        <div class="mx-5 mt-5 flex justify-center">
+            <a href="/accomodatiesAdmin/{{$accomodatie->id}}/edit" class="bg-blue-500 text-white p-2 rounded-lg mr-3">Bewerk</a>
+            <a href="/accomodatiesAdmin/{{$accomodatie->id}}/delete" class="bg-red-500 text-white p-2 rounded-lg">Verwijder</a>
+        </div>
+    @endauth
     <div class="flex flex-wrap">
         <div class="w-1/2 rounded-lg shadow-lg m-auto mt-12">
             <img src="{{Vite::asset($accomodatie->image_path)}}" alt="{{$accomodatie->verblijf}}">
+            
         </div>
         <div class="w-1/3 p-4">
             <div class="bg-white rounded-lg shadow-lg mt-12">

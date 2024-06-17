@@ -14,8 +14,10 @@ class AccomodatieAdminController extends Controller
      */
     public function index()
     {
-        
-        return view('accomodatiesAdmin');
+        $accomodatiesAdmin = Accomodaties::all();
+        return view('accomodatiesAdmin', [
+            'accomodatiesAdmin' => $accomodatiesAdmin
+        ]);
     }
 
     /**
@@ -33,7 +35,7 @@ class AccomodatieAdminController extends Controller
     {
         try{
             $this->validate($request,[
-                'image' => 'required|image|mimes:png,jpg,jpeg,gif|max:2048',
+                'image' => 'required|image|mimes:png,jpg,jpeg,gif,webp|max:2048',
             ]);
             
             $imageName = time().'.'.$request->image->getClientOriginalExtension();
@@ -61,9 +63,13 @@ class AccomodatieAdminController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(AccomodatieAdmin $accomodatieAdmin)
+    public function show(Accomodaties $accomodatie)
     {
-        //
+        // dd($accomodatie);
+        // $accomodatieEdit = Accomodaties::all();
+        return view('accomodatiesEdit',[
+            'accomodatieEdit' => $accomodatie
+        ]);
     }
 
     /**
@@ -77,16 +83,40 @@ class AccomodatieAdminController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, AccomodatieAdmin $accomodatieAdmin)
+    public function update(Request $request, Accomodaties $accomodatie)
     {
-        //
+        try{
+            $this->validate($request,[
+                'image' => 'required|image|mimes:png,jpg,jpeg,gif,webp|max:2048',
+            ]);
+            
+            $imageName = time().'.'.$request->image->getClientOriginalExtension();
+            $request->image->storeAs('images', $imageName);
+           
+         
+            // Set other properties
+            $accomodatie->verblijf = $request->input('naam');
+            $accomodatie->aantal_slaapkamers = $request->input('slaapkamer');
+            $accomodatie->aantal_badkamers = $request->input('badkamer');
+            $accomodatie->prijs = $request->input('prijs');
+            $accomodatie->image_path = '/storage/app/images/' . $imageName;
+            
+            // Update the accomodatie
+            $accomodatie->update();
+            
+            return redirect()->route('accomodaties')->with('bericht', 'Accommodatie geupdate!');
+        }
+        catch(Exception $e){
+            return redirect()->route('accomodaties')->with('error', 'Er is iets misgegaan bij het update van de accommodatie');
+        }
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(AccomodatieAdmin $accomodatieAdmin)
+    public function destroy(Accomodaties $accomodatie)
     {
-        //
+        $accomodatie->delete();
+        return redirect()->route('accomodaties')->with('bericht', 'Accommodatie verwijderd!');
     }
 }

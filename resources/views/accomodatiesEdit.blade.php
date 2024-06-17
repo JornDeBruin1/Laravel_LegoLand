@@ -7,23 +7,24 @@
     @endif
     <h1 class="text-center text-2xl font-bold py-6">Accomodaties Admin</h1>
     <div class="w-full pl-10">
-        <form class="flex flex-col" action="/accomodatiesAdmin/save" method="POST" enctype="multipart/form-data">
+        <form class="flex flex-col" action="/accomodatiesAdmin/{{$accomodatieEdit->id}}/update" method="POST" enctype="multipart/form-data">
             @csrf
+            
             <div class="p-5">
                 <label for="naam">Naam accomodatie: </label>
-                <input class="border border-black w-1/3" type="text" name="naam" id="naam">
+                <input class="border border-black w-1/3" type="text" name="naam" id="naam" value="{{$accomodatieEdit->verblijf}}">
             </div>
             <div class="p-5">
                 <label for="slaapkamer">Aantal slaapkamers: </label>
-                <input class="border border-black w-14" min="0" value="0" type="number" name="slaapkamer" id="slaapkamers" >
+                <input class="border border-black w-14" min="0"  type="number" name="slaapkamer" id="slaapkamers" value="{{$accomodatieEdit->aantal_slaapkamers}}">
             </div>
             <div class="p-5">
                 <label for="badkamer">Aantal badkamers: </label>
-                <input class="border border-black w-14" min="0" value="0" type="number" name="badkamer" id="badkamers" >
+                <input class="border border-black w-14" min="0"  type="number" name="badkamer" id="badkamers" value="{{$accomodatieEdit->aantal_badkamers}}">
             </div>
             <div class="p-5">
                 <label for="prijs">Prijs per nacht: </label>
-                <input class="border border-black w-1/4" type="text" name="prijs" id="prijs">
+                <input class="border border-black w-1/4" type="text" name="prijs" id="prijs" value="{{$accomodatieEdit->prijs}}">
             </div>
 
             <div>
@@ -32,7 +33,7 @@
             </div>
 
             <div class="p-5">
-                <input type="submit" value="Voeg accomodatie toe" class="bg-green-500 text-white px-4 py-2 rounded-lg mt-4 block text-center cursor-pointer">
+                <input type="submit" value="edit accomodatie" class="bg-orange-500 text-white px-4 py-2 rounded-lg mt-4 block text-center cursor-pointer">
             </div>
         </form>
     </div>
