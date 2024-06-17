@@ -37,6 +37,11 @@ Route::post('/contact/save', [\App\Http\Controllers\ContactController::class, 's
 Route::get('/accomodaties', [\App\Http\Controllers\AccomodatiesController::class, 'index'])->name('accomodaties');
 Route::get('/accomodaties/{accomodatie}', [\App\Http\Controllers\AccomodatieBestelController::class, 'show'])->name('accomodatie.bestel');
 Route::post('/accomodaties/save', [\App\Http\Controllers\ReserveringController::class, 'store'])->name('reservering.store');
+Route::get('/accomodatieAdmin',[\App\Http\Controllers\AccomodatieAdminController::class, 'index'])->name('accomodatieAdmin');
+Route::post('/accomodatiesAdmin/save',[\App\Http\Controllers\AccomodatieAdminController::class,'store'])->name('accomodatieAdmin.store');
+Route::get('/accomodatiesAdmin/{accomodatie}/edit',[\App\Http\Controllers\AccomodatieAdminController::class,'show'])->name('accomodatieAdmin.show');
+Route::post('/accomodatiesAdmin/{accomodatie}/update', [\App\Http\Controllers\AccomodatieAdminController::class,'update'])->name('accomodatieAdmin.update');
+Route::get('/accomodatiesAdmin/{accomodatie}/delete', [\App\Http\Controllers\AccomodatieAdminController::class,'destroy'])->name('accomodatieAdmin.destroy');
 
 // Auth middleware
 Route::middleware('auth')->group(function () {
