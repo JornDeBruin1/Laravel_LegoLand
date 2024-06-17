@@ -20,6 +20,12 @@
                         <td>{{$attractie->height}} cm</td>
                     </tr>
                 </table>
+                @auth
+                <div class="mt-6 flex justify-center">
+                    <a href="{{ route('attracties.admin.show', $attractie->id) }}" class="bg-green-500 text-white px-4 py-2 rounded-lg mt-4 block text-center">Bijwerken</a>
+                    <a href="{{ route('attracties.admin.show', $attractie->id) }}" class="bg-red-500 text-white px-4 py-2 rounded-lg mt-4 block text-center">Verwijderen</a>
+                </div>
+                @endauth
             </div>
         </div>
 @endsection

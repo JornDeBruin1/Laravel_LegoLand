@@ -5,15 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\Openingstijden;
 use Illuminate\Http\Request;
 
-class OpeningstijdenController extends Controller
+class OpeningstijdenAdminController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $openingstijden = Openingstijden::all();
-        return view('openingstijden', ['openingstijden' => $openingstijden]);
+        
+        return view('openingstijdenAdmin');
     }
 
     /**
@@ -35,11 +35,9 @@ class OpeningstijdenController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Openingstijden $openingstijd)
+    public function show(Openingstijden $openingstijden)
     {
-        return view('openingstijdenAdmin', [
-            'openingstijd' => $openingstijd
-        ]);
+        //
     }
 
     /**
@@ -55,7 +53,12 @@ class OpeningstijdenController extends Controller
      */
     public function update(Request $request, Openingstijden $openingstijden)
     {
-        //
+        $openingstijden = Item::find($id);
+        $openingstijden->opening = $request->input('opening');
+        $openingstijden->sluitingp = $request->input('sluiting');
+    
+        $openingstijden->save();
+        return redirect('/items')->with('success', 'Item updated successfully');
     }
 
     /**
