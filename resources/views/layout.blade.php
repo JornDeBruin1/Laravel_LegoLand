@@ -19,7 +19,7 @@
 
             @auth
             {{-- navbar admin page --}}
-            <nav class="relative px-4 py-4 flex justify-between items-center bg-customYellow uppercase w-full">
+            <nav class="relative px-4 py-3 flex justify-between items-center bg-customYellow uppercase w-full">
                 {{-- image --}}
                <div>
                    <a href="/"><img class="w-1/3" src="{{ Vite::asset('resources/images/LEGOLAND_PARKS_LOGO.svg') }}" alt="LegoLand logo"></a>
@@ -32,7 +32,7 @@
                        </svg>
                    </button>
                </div>
-               <ul class="hidden absolute top-1/2 left-1/2 customLg:mx-auto customLg:flex customLg:items-center customLg:w-auto customLg:space-x-6">
+               <ul class="hidden absolute top-1/2 left-[30%] customLg:mx-auto customLg:flex customLg:items-center customLg:w-auto customLg:space-x-6">
                    <li class="text-gray-300">
                        <a href="/dashboard"><li>Dashboard</li></a>
                    </li>
@@ -49,7 +49,7 @@
                         <a href="/contact"><li>Contact</li></a>
                     </li>
                    <li>
-                        <a href="/accomdatie"><li>Accomdatie</li></a>
+                        <a href="/accomodaties"><li>Accomdatie</li></a>
                     </li>
                     <li>
                         <a href="/logout">Logout</a>
@@ -87,7 +87,7 @@
                             <li class="mb-1">
                             </li><a class="block p-4 text-sm font-semibold text-black hover:bg-blue-50 hover:text-customYellow rounded" href="/contact">Contact</a>                        </ul>
                             <li class="mb-1">
-                            </li><a class="block p-4 text-sm font-semibold text-black hover:bg-blue-50 hover:text-customYellow rounded" href="/accomdatie">Accomdatie</a>                        </ul>
+                            </li><a class="block p-4 text-sm font-semibold text-black hover:bg-blue-50 hover:text-customYellow rounded" href="/accomodaties">Accomdatie</a>                        </ul>
                             <li class="mb-1">
                             </li><a class="block p-4 text-sm font-semibold text-black hover:bg-blue-50 hover:text-customYellow rounded" href="/logout">Logout</a>                        </ul>
                     </div>
@@ -124,7 +124,7 @@
                     <li><a href="/contact"><li>Contact</li></a></li>
                     <li><a href="/accomodaties"><li>Accomodatie</li></a></li>
                     <li><a href="/login">Login</a></li>
-                    <li><a href="/register">Register</a></li>
+                    {{-- <li><a href="/register">Register</a></li> --}}
                 </ul>
              </nav> 
             <div class="navbar-menu relative z-50 hidden">
@@ -158,7 +158,7 @@
                             <li class="mb-1">
                             </li><a class="block p-4 text-sm font-semibold text-black hover:bg-blue-50 hover:text-customYellow rounded" href="/login">Login</a>
                             <li class="mb-1">
-                            </li><a class="block p-4 text-sm font-semibold text-black hover:bg-blue-50 hover:text-customYellow rounded" href="/register">Register</a>
+                            {{-- </li><a class="block p-4 text-sm font-semibold text-black hover:bg-blue-50 hover:text-customYellow rounded" href="/register">Register</a> --}}
                         </ul>
                     </div>
                 </nav>

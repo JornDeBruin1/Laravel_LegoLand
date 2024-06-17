@@ -6,7 +6,7 @@ export default {
       colors: {
         customYellow: '#facf00',
         customMediumDarkYellow: '#f1be00',
-        customDarkBlue: '#276db8',
+        customDarkBlue: '#276db8',  
       },
       screens: {
         customLg: '1218px',

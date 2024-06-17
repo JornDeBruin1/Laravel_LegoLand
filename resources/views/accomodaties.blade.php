@@ -30,6 +30,15 @@
                     </div>
                 </div>
             @endforeach
+            @auth
+            <div class="w-full p-4 flex justify-center">
+                <div class="bg-white rounded-lg shadow-lg">
+                    <div class="p-4">
+                        <h2 class="text-xl font-bold">Toevoegen</h2>
+                        <a href="/accomodatieAdmin" class="bg-green-500 text-white px-4 py-2 rounded-lg mt-4 block text-center">Toevoegen</a>
+                    </div>
+                </div>
+            @endauth
         </div>
     </div>
 @endsection
