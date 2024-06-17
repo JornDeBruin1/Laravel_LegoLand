@@ -40,9 +40,13 @@
                                 </div>
                             </div>
                         </div>
+                        @auth
+                        <div class="mx-5 mt-5 flex justify-center">
+                            <a href="/accomodatiesAdmin/{{$ticket->id}}/edit" class="bg-blue-500 text-white p-2 rounded-lg mr-3">Bewerk</a>
+                            <a href="/accomodatiesAdmin/{{$ticket->id}}/delete" class="bg-red-500 text-white p-2 rounded-lg">Verwijder</a>
+                        </div>
+                    @endauth            
                     </div>
-                  
-                    
                 @endforeach 
                
             </div>
