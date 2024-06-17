@@ -53,7 +53,12 @@ class OpeningstijdenAdminController extends Controller
      */
     public function update(Request $request, Openingstijden $openingstijden)
     {
-        //
+        $openingstijden = Item::find($id);
+        $openingstijden->opening = $request->input('opening');
+        $openingstijden->sluitingp = $request->input('sluiting');
+    
+        $openingstijden->save();
+        return redirect('/items')->with('success', 'Item updated successfully');
     }
 
     /**
