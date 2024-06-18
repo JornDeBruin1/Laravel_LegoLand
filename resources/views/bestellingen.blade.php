@@ -42,15 +42,22 @@
                         </div>
                         @auth
                         <div class="mx-5 mt-5 flex justify-center">
-                            <a href="/accomodatiesAdmin/{{$ticket->id}}/edit" class="bg-blue-500 text-white p-2 rounded-lg mr-3">Bewerk</a>
-                            <a href="/accomodatiesAdmin/{{$ticket->id}}/delete" class="bg-red-500 text-white p-2 rounded-lg">Verwijder</a>
+                            <a href="/bestellingAdmin/{{$ticket->id}}/edit" class="bg-blue-500 text-white p-2 rounded-lg mr-3">Bewerk</a>
+                            <a href="/bestellingAdmin/{{$ticket->id}}/delete" class="bg-red-500 text-white p-2 rounded-lg">Verwijder</a>
                         </div>
                     @endauth            
                     </div>
                 @endforeach 
-               
+            </div>
+            <div class="bg-white rounded-lg shadow-lg w-1/4 flex justify-center mx-auto my-8">
+                <div class="p-4">
+                    <h2 class="text-xl font-bold">Toevoegen</h2>
+                    <a href="/bestellingAdmin" class="bg-green-500 text-white px-4 py-2 rounded-lg mt-4 block text-center">Toevoegen</a>
+                </div>
             </div>
             <div class="mt-4 lg:ml-[40%]">
+               
+
                 <label>Achternaam</label>
                 <input class="rounded border-2 border-gray-400 ml-[3.7rem]" type="text" name="achternaam" id="achternaam">
                 <br><br>
