@@ -24,6 +24,9 @@ Route::get('/', function () {
 });
 Route::get('/attracties', [\App\Http\Controllers\AttractiesController::class, 'index'])->name('attracties');
 Route::get('/attracties/{attractie}', [\App\Http\Controllers\AttractiesController::class, 'show'])->name('attracties.detail');
+
+Route::get('/attractiesAdmin/{attractie}', [\App\Http\Controllers\AttractiesAdminController::class, 'show'])->name('attracties.admin.show');
+
 Route::get('/openingstijden', [\App\Http\Controllers\OpeningstijdenController::class, 'index'])->name('openingstijden');
 Route::get('/openingstijden/{openingstijd}', [\App\Http\Controllers\OpeningstijdenController::class, 'show'])->name('openingstijdenAdmin');
 Route::post('/openingstijden/{id}/edit', [\App\Http\Controllers\OpeningstijdenAdminController::class, 'update'])->name('openingstijden.edit');
