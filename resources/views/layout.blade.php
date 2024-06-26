@@ -73,7 +73,7 @@
                         </button>
                     </div>
                     <div>
-                        <ul class="uppercase">
+                        <ul class="uppercase list-none">
                             <li class="mb-1 text-m font-medium ">
                                 <a class="block p-4 text-sm font-semibold text-black hover:bg-blue-50 hover:text-customYellow rounded" href="/dashboard">Dashboard</a>
                             </li>
@@ -81,15 +81,21 @@
                                 <a class="block p-4 text-sm font-semibold text-black hover:bg-blue-50 hover:text-customYellow rounded" href="/attracties">Attracties</a>
                             </li>
                             <li class="mb-1">
-                            </li><a class="block p-4 text-sm font-semibold text-black hover:bg-blue-50 hover:text-customYellow rounded" href="/openingstijden">Openingstijden</a>
+                                <a class="block p-4 text-sm font-semibold text-black hover:bg-blue-50 hover:text-customYellow rounded" href="/openingstijden">Openingstijden</a>
+                            </li>
                             <li class="mb-1">
-                            </li><a class="block p-4 text-sm font-semibold text-black hover:bg-blue-50 hover:text-customYellow rounded" href="/bestellingen">Prijzen</a>
+                                <a class="block p-4 text-sm font-semibold text-black hover:bg-blue-50 hover:text-customYellow rounded" href="/bestellingen">Prijzen</a>
+                            </li>
                             <li class="mb-1">
-                            </li><a class="block p-4 text-sm font-semibold text-black hover:bg-blue-50 hover:text-customYellow rounded" href="/contact">Contact</a>                        </ul>
+                                <a class="block p-4 text-sm font-semibold text-black hover:bg-blue-50 hover:text-customYellow rounded" href="/contact">Contact</a>                     
+                            </li>
                             <li class="mb-1">
-                            </li><a class="block p-4 text-sm font-semibold text-black hover:bg-blue-50 hover:text-customYellow rounded" href="/accomodaties">Accomdatie</a>                        </ul>
+                               <a class="block p-4 text-sm font-semibold text-black hover:bg-blue-50 hover:text-customYellow rounded" href="/accomodaties">Accomdatie</a>                        
+                            </li>
                             <li class="mb-1">
-                            </li><a class="block p-4 text-sm font-semibold text-black hover:bg-blue-50 hover:text-customYellow rounded" href="/logout">Logout</a>                        </ul>
+                                <a class="block p-4 text-sm font-semibold text-black hover:bg-blue-50 hover:text-customYellow rounded" href="/logout">Logout</a>
+                            </li>
+                        </ul>
                     </div>
                 </nav>
             </div>
