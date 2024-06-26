@@ -3,6 +3,12 @@
     <div class="w-full "> 
                 <h1 class="text-2xl font-bold text-center mb-5">{{ $attractie->title }}</h1>
             </div>
+            @auth
+            <div class="mx-5 mt-5 flex justify-center">
+                <a href="/attractiesAdmin/{{$attractie->id}}/edit" class="bg-blue-500 text-white p-2 rounded-lg mr-3">Bewerk</a>
+                <a href="/attractiesAdmin/{{$attractie->id}}/delete" class="bg-red-500 text-white p-2 rounded-lg">Verwijder</a>
+            </div>
+            @endAuth
             <div class="">
                 <div class="flex justify-center">
                     <img class="mx-4 w-1/2" src="{{ Vite::asset($attractie->image_path) }}" alt="Attractie  afbeelding"/>
@@ -20,12 +26,6 @@
                         <td>{{$attractie->height}} cm</td>
                     </tr>
                 </table>
-                @auth
-                <div class="mt-6 flex justify-center">
-                    <a href="{{ route('attracties.admin.show', $attractie->id) }}" class="bg-green-500 text-white px-4 py-2 rounded-lg mt-4 block text-center">Bijwerken</a>
-                    <a href="{{ route('attracties.admin.show', $attractie->id) }}" class="bg-red-500 text-white px-4 py-2 rounded-lg mt-4 block text-center">Verwijderen</a>
-                </div>
-                @endauth
             </div>
         </div>
 @endsection

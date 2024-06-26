@@ -51,14 +51,16 @@ class OpeningstijdenAdminController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Openingstijden $openingstijden)
+    public function update(Request $request, Openingstijden $openingstijd)
     {
-        $openingstijden = Item::find($id);
-        $openingstijden->opening = $request->input('opening');
-        $openingstijden->sluitingp = $request->input('sluiting');
+        
+  
+        $openingstijd->opening = $request->input('opening');
+        $openingstijd->sluiting = $request->input('sluiting');
     
-        $openingstijden->save();
-        return redirect('/items')->with('success', 'Item updated successfully');
+        // dd($openingstijden);
+        $openingstijd->update();
+        return redirect('openingstijden')->with('success', 'Item updated successfully');
     }
 
     /**

@@ -1,5 +1,18 @@
 @extends('layout')
 @section('content')
+{{-- confirmation bericht --}}
+@if(\Session::has('bericht'))
+<div class="bg-green-600 rounded w-1/2 m-auto text-center border-black border">
+
+    <p class="text-white text-lg m-2">{!! \Session::get('bericht') !!}</p>
+
+</div>
+@endif
+@if(\Session::has('error'))
+<div class="bg-red-600 rounded w-1/2 m-auto text-center border-black border"> 
+    <p class="text-white text-lg m-2">{!! \Session::get('error') !!}</p>
+</div>
+@endif
 <div class="w-full lg:flex lg:flex-col attracties">
      {{-- laat alle attracties zien  --}}
     @foreach ($attracties as $attractie)

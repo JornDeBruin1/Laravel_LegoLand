@@ -12,7 +12,10 @@ class AttractiesAdminController extends Controller
      */
     public function index()
     {
-        return view('attractiesAdmin');
+        $attractiesAdmin = Attracties::all();
+        return view('attractiesAdmin', [
+            'attractie' => $attractiesAdmin
+        ]);
     }
 
     /**
@@ -28,7 +31,28 @@ class AttractiesAdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            $this->validate($request, [
+                'image' => 'required|image|mimes:png,jpg,jpeg,gif,webp|max:2048',
+            ]);
+            
+            $imageName = time().'.'.$request->image->getClientOriginalExtension();
+            $request->image->storeAs('images', $imageName);
+    
+            $attractie = new Attracties();
+            $attractie->title = $request->input('title');
+            $attractie->description = $request->input('description');
+            $attractie->duration = $request->input('duration');
+            $attractie->min_height = $request->input('min_height');
+            $attractie->height = $request->input('height');
+            $attractie->image_path = '/storage/app/images/' . $imageName;
+            
+            $attractie->save();
+    
+            return redirect()->route('attracties')->with('bericht', 'Attractie toegevoegd met succes!');
+        } catch(Exception $e) {
+            return redirect()->route('attracties')->with('error', 'Er is iets misgegaan bij het toevoegen van de attractie');
+        }
     }
 
     /**
@@ -36,7 +60,8 @@ class AttractiesAdminController extends Controller
      */
     public function show(Attracties $attractie)
     {
-        return view('attractiesAdmin', [
+        // dd($attractie);
+        return view('attractiesEdit', [
             'attractie' => $attractie
         ]);
     }
@@ -52,16 +77,37 @@ class AttractiesAdminController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Attracties $attracties)
+    public function update(Request $request, Attracties $attractie)
     {
-        //
+        try {
+            $this->validate($request, [
+                'image' => 'required|image|mimes:png,jpg,jpeg,gif,webp|max:2048',
+            ]);
+    
+            $imageName = time().'.'.$request->image->getClientOriginalExtension();
+            $request->image->storeAs('images', $imageName);
+    
+            $attractie->title = $request->input('title');
+            $attractie->description = $request->input('description');
+            $attractie->duration = $request->input('duration');
+            $attractie->min_height = $request->input('min_height');
+            $attractie->height = $request->input('height');
+            $attractie->image_path = '/storage/app/images/' . $imageName;
+    
+            $attractie->update();
+    
+            return redirect()->route('attracties')->with('bericht', 'Attractie geupdate!');
+        } catch(Exception $e) {
+            return redirect()->route('attracties')->with('error', 'Er is iets misgegaan bij het update van de attractie');
+        }
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Attracties $attracties)
+    public function destroy(Attracties $attractie)
     {
-        //
+        $attractie->delete();
+        return redirect()->route('attracties')->with('bericht', 'Attractie verwijderd!');
     }
 }
