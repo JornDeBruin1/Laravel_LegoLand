@@ -35,7 +35,6 @@ Route::get('/bestellingAdmin/{ticket}/edit',[\App\Http\Controllers\bestellingAdm
 Route::post('/bestellingAdmin/save', [\App\Http\Controllers\BestellingAdminController::class, 'store'])->name('bestellingAdmin.store');
 Route::post('/bestellingAdmin/{ticket}/update', [\App\Http\Controllers\BestellingAdminController::class,'update'])->name('bestellingAdmin.update');
 Route::get('/bestellingAdmin/{ticket}/delete', [\App\Http\Controllers\BestellingAdminController::class,'destroy'])->name('bestellingAdmin.destroy');
-
 Route::get('/contact', [\App\Http\Controllers\ContactController::class, 'index'])->name('contact'); 
 Route::post('/contact/save', [\App\Http\Controllers\ContactController::class, 'store'])->name('contact.store');
 Route::get('/accomodaties', [\App\Http\Controllers\AccomodatiesController::class, 'index'])->name('accomodaties');
