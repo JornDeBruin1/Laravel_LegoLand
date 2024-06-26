@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Attracties;
+use Exception;
 use Illuminate\Http\Request;
 
 class AttractiesAdminController extends Controller
