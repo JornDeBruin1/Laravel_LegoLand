@@ -65,8 +65,7 @@ class AccomodatieAdminController extends Controller
      */
     public function show(Accomodaties $accomodatie)
     {
-        // dd($accomodatie);
-        // $accomodatieEdit = Accomodaties::all();
+  
         return view('accomodatiesEdit',[
             'accomodatieEdit' => $accomodatie
         ]);
