@@ -23,11 +23,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/attracties', [\App\Http\Controllers\AttractiesController::class, 'index'])->name('attracties');
+Route::get('/attractiesAdmin', [\App\Http\Controllers\AttractiesAdminController::class, 'index'])->name('attractiesAdmin');
 Route::get('/attractiesAdmin/{attractie}', [\App\Http\Controllers\AttractiesAdminController::class, 'show'])->name('attracties.admin.show');
+Route::post('/attractiesAdmin/save',[\App\Http\Controllers\AttractiesAdminController::class,'store'])->name('attractiesAdmin.store');
+Route::get('/attractiesAdmin/{attractie}/edit', [\App\Http\Controllers\AttractiesAdminController::class, 'show'])->name('attractiesAdmin.show');
+Route::post('/attractiesAdmin/{attractie}/update', [\App\Http\Controllers\AttractiesAdminController::class, 'update'])->name('attractiesAdmin.update');
+Route::get('/attractiesAdmin/{attractie}/delete', [\App\Http\Controllers\AttractiesAdminController::class, 'destroy'])->name('attractiesAdmin.destroy');
 Route::get('/attracties/{attractie}', [\App\Http\Controllers\AttractiesController::class, 'show'])->name('attracties.detail');
 Route::get('/openingstijden', [\App\Http\Controllers\OpeningstijdenController::class, 'index'])->name('openingstijden');
-Route::get('/openingstijden/{openingstijd}', [\App\Http\Controllers\OpeningstijdenController::class, 'show'])->name('openingstijden.admin');
-Route::post('/openingstijden/{id}/edit', [\App\Http\Controllers\OpeningstijdenAdminController::class, 'show'])->name('openingstijden@edit');
+Route::get('/openingstijden/{openingstijd}', [\App\Http\Controllers\OpeningstijdenController::class, 'show'])->name('openingstijdenAdmin');
+Route::post('/openingstijden/{id}/edit', [\App\Http\Controllers\OpeningstijdenAdminController::class, 'update'])->name('openingstijden.edit');
 Route::get('/bestellingen', [\App\Http\Controllers\BestellingenController::class, 'index'])->name('bestellingen');
 Route::post('/bestellingen/save', [\App\Http\Controllers\BestellingenController::class, 'store'])->name('bestellingen.store');
 Route::get('/bestellingAdmin',[\App\Http\Controllers\BestellingAdminController::class, 'index'])->name('bestellingAdmin');

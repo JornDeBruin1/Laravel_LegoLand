@@ -3,7 +3,7 @@
 <div class="w-full"> 
                 <h1 class="text-2xl font-bold text-center mb-5">{{ $openingstijd->dag }}</h1>
             </div>
-        <form class="flex flex-col" action="/openingstijden/{{$openingstijd->id}}" method="POST">
+        <form class="flex flex-col" action="/openingstijden/{{$openingstijd->id}}/edit" method="POST">
         @csrf
             <div class="mt-6 w-1/3 p-6">
                 <label for="opening">Openingstijd: </label>
